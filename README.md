@@ -1,2 +1,2 @@
 # devExamples
-Website for with coding exercises
+Website with coding exercises
