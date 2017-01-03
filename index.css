@@ -1,0 +1,21 @@
+/*General*/
+
+/*Container*/
+#introduction {
+  text-align: left;
+}
+/*Elements*/
+
+/*ID's*/
+
+#introduction {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/*Class*/
+.courses-image {
+  width: 150px ;
+  /*background-color: rgba(129, 129, 129, 0.25);*/
+  border-radius: 10px;
+}

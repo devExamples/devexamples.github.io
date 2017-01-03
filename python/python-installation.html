@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>devExamples</title>
+    <meta charset="utf-8">
+
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- include nav and footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $("#nav").load("../include/nav.html");
+      });
+    </script>
+    <script>
+      $(function(){
+        $("#footer").load("../include/footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <main>
+      <h1>Python Installation</h1>
+
+      <p>Here you can see how to install Python 3 on <a href="#linux">Linux</a>, <a href="#macos">macOS</a> or <a href="#windows">Windows</a>.<br>
+        Moreover we install the Python Development Environment "PyCharm Community Edition". It's free, but pretty helpful.<br>
+        But you don't need PyCharm. You can also use IDLE or something else.</p>
+
+      <hr>
+      <div id="linux">
+        <h2>Linux</h2>
+        <p>Open the terminal and type:</p>
+        <code>sudo apt-get install python3</code>
+        <p>Now you have Python 3 installed on your machine, type:</p>
+        <code>
+          sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make<br>
+          sudo apt-get update<br>
+          sudo apt-get install ubuntu-make
+        </code>
+        <p>for getting the the latest version of PyCharm Community Edition.</p>
+      </div>
+
+      <div id="macos">
+        <h2>macOS</h2>
+        <p>Go to the official <a href="https://www.python.org/downloads/mac-osx/" target="_blank">website of Python</a>, download the latest version and install it.
+        <p>Now you have Python 3 installed on your machine, download the latest version of <a href="https://www.jetbrains.com/pycharm/download/#section=macos" target="_blank">PyCharm Community</a> and install it.</p>
+      </div>
+
+      <div id="windows">
+        <h2>Windows</h2>
+        <p>Go to the official <a href="https://www.python.org/downloads/windows/" target="_blank">website of Python</a>, download the latest version and install it.
+        <p>Now you have Python 3 installed on your machine, download the latest version of <a href="https://www.jetbrains.com/pycharm/download/#section=windows" target="_blank">PyCharm Community</a> and install it.</p>
+        <br>
+        <p>PS: Dark theme is better than the normal version (File / Settings / Appereance / Theme: Darcula)</p>
+    </main>
+
+    <div id="footer"></div>
+  </body>
+</html>

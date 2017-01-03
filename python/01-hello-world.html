@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World - devExamples</title>
+    <meta charset="utf-8">
+
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="../example.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!-- logos and icons -->
+
+    <!-- include nav and footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $("#nav").load("../include/nav.html");
+      });
+    </script>
+    <script>
+      $(function(){
+        $("#footer").load("../include/footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <main>
+      <h1>Hello World</h1>
+      <p>A little script with input and output</p>
+      <p class="level">Beginner</p>
+      <p>The script asks you for your name and your birthday. Then you get a sentence about you.</p>
+      <div class="code-1">
+        <code>
+          name: <span class="green">devExamples</span><br>
+          year of birth: <span class="green">2002</span><br>
+          Hello devExamples. You are 14 years old.
+        </code>
+      </div>
+
+      <button name="still beta" class="view-solution">Solution</button>
+
+      <div class="code-2">
+        <code>
+          <span class="gray">#!/usr/bin/python3</span><br>
+          <span class="gray"># 01-hello-world.py</span><br>
+          <br>
+          <span class="orange">from</span> time <span>import</span> *<br>
+          <br>
+          name = <span class="purple">input</span>(<span class="green">"name: "</span>)<br>
+          year = <span class="purple">int</span>(<span class="purple">input</span>(<span class="green">"year of birth: "</span>))<br>
+          <br>
+          age = gmtime().tm_year - year<br>
+          <br>
+          sentence = <span class="green">"Hello "</span> + name + <span class="green">". You are "</span> + <span class="purple">str</span>(age) + <span class="green">" years old."</span><br>
+          <br>
+          <span class="purple">print</span>(sentence)<br>
+        </code>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+  </body>

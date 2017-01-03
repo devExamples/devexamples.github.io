@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python - devExamples</title>
+    <meta charset="utf-8">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="course.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!-- logos and icons -->
+
+    <!-- include nav and footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $("#nav").load("include/nav.html");
+      });
+    </script>
+    <script>
+      $(function(){
+        $("#footer").load("include/footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <main>
+      <div class="course-information">
+        <h1>Python</h1>
+        <p>It's a well known script-language and it's not very difficult. In this course we use Python 3.</p>
+        <a href="python/python-installation.html">Python Installation</a>
+      </div>
+      <hr>
+
+      <h2>Examples</h2>
+      <div class="examples">
+        <table>
+          <tr id="1-welcome">
+            <td>
+              <img class="example-image" src="pictures/python/01-hello-world.jpg">
+            </td>
+            <td>
+              <a href="python/01-hello-world.html"><h3>Hello World</h3></a>
+              <p class="level">Beginner</p>
+              <p>A little script with input and output</p>
+          </tr>
+          <tr id="2-todolist">
+            <td>
+              <img class="example-image" src="pictures/python/02-todolist.jpg">
+            </td>
+            <td>
+              <a href="python/02-todolist.html"><h3>To-Do-List</h3></a>
+              <p class="level">Beginner</p>
+              <p>Create your own To-Do-List</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <div id="footer"></footer>
+  </body>
+</html>

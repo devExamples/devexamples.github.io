@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>devExamples</title>
+    <meta charset="utf-8">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- include nav and footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $("#footer").load("include/footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <br><br><br> <!--margin-->
+      <h1 id="heading">devExamples</h1>
+      <h2 id="quotation">Practice makes perfect.</h2>
+    </header>
+
+    <main>
+      <div id="introduction">
+        <h4>Here on <strong>devExamples</strong> you can find example programs.<br>
+          For every project there is an instruction and some example code.<br>
+          Right now there is just Python available<br>
+          If you have finished you'll get the right solution.</h4>
+      </div>
+
+      <hr>
+
+      <div class="box_warning">
+       <i class="fa fa-warning"></i>This website is still a beta version
+    </div>
+
+      <div id="courses">
+        <h3>Courses</h3>
+        <p>Right now there is just one language available.<br>
+          But there will be more available in the future:</p>
+        <div id="courses-python">
+          <a class="courses-link" href="python.html">
+            <img class="courses-image" src="https://www.fierdecoder.fr/wp-content/uploads/2014/03/python.png" alt="python-logo">
+            <h4>Python</h4>
+          </a>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+  </body>
+</html>
