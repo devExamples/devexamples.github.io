@@ -2,7 +2,7 @@
 
 ## About
 
-**[devExamples.cf](devExamples.cf)** is a website with coding examples.
+**[devExamples.cf](http://devExamples.cf)** is a website with coding examples.
 For every project there is an instruction and some example code.
 Right now there is just Python available
 If you have finished you'll get the right solution.
