@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors - devExamples</title>
+    <meta charset="utf-8">
+
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="../example.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!-- logos and icons -->
+
+    <!-- include nav and footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $("#nav").load("../include/nav.html");
+      });
+    </script>
+    <script>
+      $(function(){
+        $("#footer").load("../include/footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <main>
+      <h1>Rock-Paper-Scissors</h1>
+      <p>Create </p>
+      <p class="level">Beginner</p>
+      <p>Create your own game</p>
+      <div class="code-1">
+        <code>
+          * Rock-Paper-Scissors *<br>
+          Runde 1:<br>
+          Your choice: <span  class="green">Rock</span><br>
+          Computer: Paper<br>
+          You: 0 &amp; Computer: 1.<br>
+          Runde 2:<br>
+          Your choice: <span  class="green">Paper</span><br>
+          Computer: Scissors<br>
+          You: 0 &amp; Computer: 2.<br>
+          Runde 3:<br>
+          Your choice: <span  class="green">Scissors</span><br>
+          Computer: Paper<br>
+          You: 1 &amp; Computer: 2.<br>
+          Damage! Unfortunately the computer won.<br>
+          Again?<br>
+          Yes / No: <span  class="green">Yes</span>
+        </code>
+      </div>
+
+      <button name="still beta" class="view-solution">Solution</button>
+
+      <div class="code-2">
+        <code>
+          <span class="gray">#!/usr/bin/python3</span><br>
+          <span class="gray"># rock-paper-scissors.py</span><br>
+          <br>
+          <span class="orange">from</span> random <span class="orange">import</span> randint<br>
+          <br>
+          points = [<span class="blue">0</span><span class="orange">,</span> <span class="blue">0</span>]<br>
+          figures = [<span class="green">Rock"</span><span class="orange">,</span> <span class="green">"Paper"</span><span class="orange">,</span> <span class="green">"Scissors"</span>]<br>
+          play = <span class="orange">True</span><br>
+          <br>
+          <span class="orange">def</span> check(a<span class="orange">,</span> b):<br>
+              ...<span class="orange">if</span> a == <span class="green">"Scissors"</span> <span class="orange">or</span> a == <span class="green">"scissors"</span>:<br>
+                  .......<span class="orange">if</span> b == <span class="green">"Scissors"</span> <span class="orange">or</span> b == <span class="green">"scissors"</span>:<br>
+                      ..........result(<span class="green">"ab"</span>)<br>
+                  .......<span class="orange">elif</span> b == <span class="green">"Rock"</span> <span class="orange">or</span> b == <span class="green">"rock"</span>:<br>
+                      ..........result(<span class="green">"b"</span>)<br>
+                  .......<span class="orange">elif</span> b == <span class="green">"Paper"</span> or b == <span class="green">"paper"</span>:<br>
+                      ..........result(<span class="green">"a"</span>)<br>
+              ...<span class="orange">elif</span> a == <span class="green">"Rock"</span> <span class="orange">or</span> a == <span class="green">"rock"</span>:<br>
+                  ......<span class="orange">if</span> b == <span class="green">"Scissors"</span> <span class="green">or</span> b == <span class="green">"scissors"</span>:<br>
+                      ..........result(<span class="green">"a"</span>)<br>
+                  ......<span class="orange">elif</span> b == <span class="green">"Rock"</span> <span class="orange">or</span> b == <span class="green">"rock"</span>:<br>
+                      ..........result(<span class="green">"ab"</span>)<br>
+                  ......<span class="orange">elif</span> b == <span class="green">"Paper"</span> <span class="orange">or</span> b == <span class="green">"paper"</span>:<br>
+                      ..........result(<span class="green">"b"</span>)<br>
+              ...<span class="orange">elif</span> a == <span class="green">"Paper"</span> <span class="orange">or</span> a == <span class="green">"paper"</span>:<br>
+                  ......<span class="orange">if</span> b == <span class="green">"Scissors"</span> <span class="orange">or</span> b == <span class="green">"scissors"</span>:<br>
+                      .........result(<span class="green">"b"</span>)<br>
+                  ......<span class="orange">elif</span> b == <span class="green">"Rock"</span> <span class="orange">or</span> b == <span class="green">"rock"</span>:<br>
+                      .........result(<span class="green">"a"</span>)<br>
+                  ......<span class="orange">elif</span> b == <span class="green">"Paper"</span> <span class="orange">or</span> b == <span class="orange">"paper"</span>:<br>
+                      .........result(<span class="green">"ab"</span>)<br>
+          <br>
+          <span class="orange">def</span> result(winner):<br>
+              ...<span class="orange">global</span> points<br>
+              ...<span class="orange">if</span> winner == <span class="green">"a"</span>:<br>
+                  ......points[<span class="blue">0</span>] += <span class="blue">1</span><br>
+              ...<span class="orange">elif</span> winner == <span class="green">"ab"</span>:<br>
+                  ......points[<span class="blue">0</span>] += <span class="blue">1</span><br>
+                  ......points[<span class="orange">1</span>] += <span class="blue">1</span><br>
+              ...<span class="orange">else</span>:<br>
+                  ......points[<span class="blue">1</span>] += <span class="blue">1</span><br>
+              ...<span class="purple">print</span>(<span class="green">"You: "</span> + <span class="purple">str</span>(points[<span class="blue">0</span>]) + <span class="green">" &amp; Computer: "</span> + <span class="purple">str</span>(points[<span class="blue">1</span>]) + <span class="green">"."</span>)<br>
+          <br>
+          <span class="orange">def</span> finish():<br>
+              ...<span class="orange">global</span> play<br>
+              ...<span class="orange">if</span> points[<span class="blue">0</span>] > points[<span class="blue">1</span>]:<br>
+                  ......<span class="purple">print</span>(<span class="green">"Congratulations! You're the winner."</span>)<br>
+              ...<span class="orange">elif</span> points[<span class="blue">0</span>] == points[<span class="blue">1</span>]:<br>
+                  ......<span class="purple">print</span>(<span class="green">"Tie! Both of you won."</span>)<br>
+              ...<span class="orange">else</span>:<br>
+                  ......<span class="purple">print</span>(<span class="green">"Damage! Unfortunately the computer won."</span>)<br>
+              ...<span class="purple">print</span>(<span class="green">"Again?"</span>)<br>
+              ...decision = <span class="blue">0</span><br>
+              ...<span class="orange">while</span> decision <span class="orange">not in</span> [<span class="green">"Yes"</span><span class="orange">,</span> <span class="green">"No"</span><span class="orange">,</span> <span class="green">"yes"</span><span class="orange">,</span> <span class="green">"no"</span>]:<br>
+                  ......decision = <span class="purple">input</span>(<span class="green">"Yes / No: "</span>)<br>
+              ...<span class="orange">if</span> decision == <span class="green">"Yes"</span> <span class="orange">or</span> decisionde == <span class="green">"yes"</span>:<br>
+                  ......play = <span class="orange">True</span><br>
+              ...<span class="orange">else</span>:<br>
+                  .....play = <span class="orange">False</span><br>
+          <br>
+          <span class="orange">while</span> play:<br>
+              ...<span class="purple">print</span>(<span class="green">"* Rock-Paper-Scissors *"</span>)<br>
+              <br>
+              ...<span class="orange">for</span> runde <span class="orange">in</span> <span class="purple">range</span>(<span class="blue">3</span>):<br>
+                  ......<span class="purple">print</span>(<span class="green">"Runde "</span> + <span class="purple">str</span>(runde + <span class="blue">1</span>) + <span class="green">":"</span>)<br>
+                  ......player = <span class="blue">0</span><br>
+                  ......<span class="orange">while</span> player <span class="orange">not in</span> [<span class="green">"Rock"</span><span class="orange">,</span> <span class="green">"Scissors"</span><span class="orange">,</span> <span class="green">"Paper"</span><span class="orange">,</span> <span class="green">"rock"</span><span class="orange">,</span> <span class="green">"scissors"</span><span class="orange">,</span>  <span class="green">"paper"</span>]:<br>
+                      .........player = <span class="purple">input</span>(<span class="green">"Your choice: "</span>)<br>
+                  ......computer = figures[randint(<span class="blue">0</span><span class="orange">,</span> <span class="blue">2</span>)]<br>
+                  ......<span class="purple">print</span>(<span class="green">"Computer: "</span> + computer)<br>
+                  ......check(player<span class="orange">,</span> computer)<br>
+          <br>
+              ...finish()<br>
+              ...punkte = [<span class="blue">0</span><span class="blue">,</span> <span class="blue">0</span>]
+        </code>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+  </body>
