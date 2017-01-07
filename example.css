@@ -38,6 +38,14 @@
   color: white;
 }
 
+pre {
+  background-color: transparent !important;
+  border: none !important;
+  color: white !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
 .view-solution {
   border-radius: 4px;
   background-color:#E74C3C;
@@ -69,4 +77,16 @@
 
 .deeporange {
   color: #96392B;
+}
+
+.s2, .s4 {
+  color: #CC7832;
+}
+
+.s3 {
+  color: #3971A1;
+}
+
+.s5 {
+  color: #075A42;
 }
