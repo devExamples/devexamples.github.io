@@ -65,68 +65,67 @@
       <button name="still beta" class="view-solution">Solution</button>
 
       <div class="code-2">
-        <code>
-          <span class="gray">#!/usr/bin/python3</span><br>
-          <span class="gray"># 02-hello-world.py</span><br>
-          <br>
-          TODO = []<br>
-          <br>
-          <span class="orange">def</span> start():<br>
-              ...<span class="orange">global</span> a_b<br>
-              ...showTasks()<br>
-              ...<span class="purple">print</span>(<span class="green">"What do you want to do?"</span>)<br>
-              ...<span class="purple">print</span>(<span class="green">"(A) Create Task"</span>)<br>
-              ...<span class="purple">print</span>(<span class="green">"(B) Check Task"</span>)<br>
-              ...a_b = <span class="purple">input</span>(<span class="green">"A or B: "</span>)<br>
-              ...<span class="orange">if</span> a_b == <span class="green">"a"</span> or a_b == <span class="green">"A"</span>:<br>
-                  ......createTask()<br>
-              ...<span class="orange">elif</span> a_b == <span class="green">"b"</span> or a_b == <span class="orange">"B"</span>:<br>
-                  ......checkTask()<br>
-              ...<span class="orange">else</span>:<br>
-                  ......<span class="purple">print</span>(<span class="green">"Choose A or B!"</span>)<br>
-                  ......<span class="orange">pass</span><br>
-          <br>
-          <span class="orange">def</span> showTasks():<br>
-              ...<span class="orange">global</span> TODO<br>
-              ...<span class="orange">if</span> TODO:<br>
-                  ......<span class="purple">print</span>(<span class="green">"Your exercises:"</span>)<br>
-                  ......<span class="orange">for</span> i <span class="orange">in</span> TODO:<br>
-                      .........<span class="purple">print</span>(<span class="green">"- "</span><span class="orange">,</span> <span class="deeporange">end=" "</span>)<br>
-                      .........print(i)<br>
-              ...<span class="orange">else</span>:<br>
-                  ......<span class="purple">print</span>(<span class="green">"Congratulations! You have nothing to do"</span>)<br>
-          <br>
-          <span class="orange">def</span> createTask():<br>
-              ...<span class="orange">global</span> TODO<br>
-              ...<span class="purple">print</span>(<span class="green">"Which task do you want to add?"</span>)<br>
-              ...task = <span class="purple">input</span>(<span class="green">"Task: "</span>)<br>
-              ...TODO.append(task)<br>
-          <br>
-          <span class="orange">def</span> checkTask():<br>
-              ...<span class="orange">global</span> TODO<br>
-              ...<span class="purple">print</span>(<span class="green">"Which task do you want to select?"</span>)<br>
-              ...number = <span class="purple">int</span>(<span class="purple">input</span>(<span class="green">"Number: "</span>))<br>
-              ...<span class="purple">print</span>(<span class="green">"This one: "</span><span class="orange">,</span> <span class="deeporange">end</span>=<span class="green">""</span>)<br>
-              ...<span class="purple">print</span>(TODO[number - 1]<span class="orange">,</span> <span class="deeporange">end</span>=<span class="green">""</span>)<br>
-              ...<span class="purple">print</span>(<span class="green">"?"</span>)<br>
-              ...really = <span class="purple">input</span>(<span class="green">"Y/N: "</span>)<br>
-              ...<span class="orange">if</span> really == <span class="green">"Y"</span> <span class="orange">or</span> really == <span class="green">"y"</span>:<br>
-                  ......<span class="orange">del</span> TODO[number - 1]<br>
-          <br>
-          <span class="purple">print</span>(<span class="green">"Welcome to your To-Do-List"</span>)<br>
-          start()<br>
-          <br>
-          <span class="orange">while True</span>:<br>
-              ...showTasks()<br>
-              ...a_b = <span class="purple">input</span>(<span class="green">"Create Task (A) or Check Task (B): "</span>)<br>
-              ...<span class="orange">if</span> a_b == <span class="green">"a"</span> <span class="orange">or</span> a_b == <span class="green">"A"</span>:<br>
-                  ......createTask()<br>
-              ...<span class="orange">elif</span> a_b == <span class="green">"b"</span> <span class="orange">or</span> a_b == <span class="green">"B"</span>:<br>
-                  ......checkTask()<br>
-              ...<span class="orange">else</span>:<br>
-                  ......<span class="purple">print</span>(<span class="green">"Choose A or B!"</span>)<br>
-                  ......<span class="orange">pass</span><br>
-        </code>
+        <code><pre>
+<span class="gray">#!/usr/bin/python3</span>
+<span class="gray"># 02-hello-world.py</span>
+
+TODO = []
+
+<span class="orange">def</span> start():
+    <span class="orange">global</span> a_b
+    showTasks()
+    <span class="purple">print</span>(<span class="green">"What do you want to do?"</span>)
+    <span class="purple">print</span>(<span class="green">"(A) Create Task"</span>)
+    <span class="purple">print</span>(<span class="green">"(B) Check Task"</span>)
+    a_b = <span class="purple">input</span>(<span class="green">"A or B: "</span>)
+    <span class="orange">if</span> a_b == <span class="green">"a"</span> or a_b == <span class="green">"A"</span>:
+        createTask()
+    <span class="orange">elif</span> a_b == <span class="green">"b"</span> or a_b == <span class="orange">"B"</span>:
+        checkTask()
+    <span class="orange">else</span>:
+        <span class="purple">print</span>(<span class="green">"Choose A or B!"</span>)
+        <span class="orange">pass</span>
+
+<span class="orange">def</span> showTasks():
+    <span class="orange">global</span> TODO
+    <span class="orange">if</span> TODO:
+        <span class="purple">print</span>(<span class="green">"Your exercises:"</span>)
+        <span class="orange">for</span> i <span class="orange">in</span> TODO:
+            <span class="purple">print</span>(<span class="green">"- "</span><span class="orange">,</span> <span class="deeporange">end=" "</span>)
+            print(i)
+    <span class="orange">else</span>:
+            <span class="purple">print</span>(<span class="green">"Congratulations! You have nothing to do"</span>)
+
+<span class="orange">def</span> createTask():
+    <span class="orange">global</span> TODO
+    <span class="purple">print</span>(<span class="green">"Which task do you want to add?"</span>)
+    task = <span class="purple">input</span>(<span class="green">"Task: "</span>)
+    TODO.append(task)
+
+<span class="orange">def</span> checkTask():
+    <span class="orange">global</span> TODO
+    <span class="purple">print</span>(<span class="green">"Which task do you want to select?"</span>)
+    number = <span class="purple">int</span>(<span class="purple">input</span>(<span class="green">"Number: "</span>))
+    <span class="purple">print</span>(<span class="green">"This one: "</span><span class="orange">,</span> <span class="deeporange">end</span>=<span class="green">""</span>)
+    <span class="purple">print</span>(TODO[number - 1]<span class="orange">,</span> <span class="deeporange">end</span>=<span class="green">""</span>)
+    <span class="purple">print</span>(<span class="green">"?"</span>)
+    really = <span class="purple">input</span>(<span class="green">"Y/N: "</span>)
+    <span class="orange">if</span> really == <span class="green">"Y"</span> <span class="orange">or</span> really == <span class="green">"y"</span>:
+        <span class="orange">del</span> TODO[number - 1]
+
+<span class="purple">print</span>(<span class="green">"Welcome to your To-Do-List"</span>)
+start()
+<span class="orange">while True</span>:
+    showTasks()
+    a_b = <span class="purple">input</span>(<span class="green">"Create Task (A) or Check Task (B): "</span>)
+    <span class="orange">if</span> a_b == <span class="green">"a"</span> <span class="orange">or</span> a_b == <span class="green">"A"</span>:
+        createTask()
+    <span class="orange">elif</span> a_b == <span class="green">"b"</span> <span class="orange">or</span> a_b == <span class="green">"B"</span>:
+        checkTask()
+    <span class="orange">else</span>:
+        <span class="purple">print</span>(<span class="green">"Choose A or B!"</span>)
+        <span class="orange">pass</span>
+        </pre></code>
       </div>
     </main>
 

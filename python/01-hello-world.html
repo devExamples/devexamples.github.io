@@ -44,21 +44,21 @@
       <button name="still beta" class="view-solution">Solution</button>
 
       <div class="code-2">
-        <code>
-          <span class="gray">#!/usr/bin/python3</span><br>
-          <span class="gray"># 01-hello-world.py</span><br>
-          <br>
-          <span class="orange">from</span> time <span>import</span> *<br>
-          <br>
-          name = <span class="purple">input</span>(<span class="green">"name: "</span>)<br>
-          year = <span class="purple">int</span>(<span class="purple">input</span>(<span class="green">"year of birth: "</span>))<br>
-          <br>
-          age = gmtime().tm_year - year<br>
-          <br>
-          sentence = <span class="green">"Hello "</span> + name + <span class="green">". You are "</span> + <span class="purple">str</span>(age) + <span class="green">" years old."</span><br>
-          <br>
-          <span class="purple">print</span>(sentence)<br>
-        </code>
+        <code><pre>
+<span class="gray">#!/usr/bin/python3</span>
+<span class="gray"># 01-hello-world.py</span>
+
+<span class="orange">from</span> time <span>import</span> *
+
+name = <span class="purple">input</span>(<span class="green">"name: "</span>)
+year = <span class="purple">int</span>(<span class="purple">input</span>(<span class="green">"year of birth: "</span>))
+
+age = gmtime().tm_year - year
+
+sentence = <span class="green">"Hello "</span> + name + <span class="green">". You are "</span> + <span class="purple">str</span>(age) + <span class="green">" years old."</span>
+
+<span class="purple">print</span>(sentence)
+        </pre></code>
       </div>
     </main>
 
