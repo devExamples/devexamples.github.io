@@ -55,15 +55,15 @@ pre {
   width: 100px;
 }
 
-.green {
+.green, .s5 {
   color: #075A42;
 }
 
-.orange {
+.orange, .s2, .s4 {
   color: #CC7832;
 }
 
-.gray {
+.gray, .s0 {
   color: #4A6D7F;
 }
 
@@ -71,22 +71,10 @@ pre {
   color: #4266BA;
 }
 
-.blue {
+.blue, .s3 {
   color: #3971A1;
 }
 
 .deeporange {
   color: #96392B;
-}
-
-.s2, .s4 {
-  color: #CC7832;
-}
-
-.s3 {
-  color: #3971A1;
-}
-
-.s5 {
-  color: #075A42;
 }
