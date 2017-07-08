@@ -99,6 +99,11 @@ main {
   font-family: 'Francois One', sans-serif;
 }
 
+#copyright a {
+  color: #333;
+  text-decoration: none;
+}
+
 #github {
   color: white;
   width: 100px;
