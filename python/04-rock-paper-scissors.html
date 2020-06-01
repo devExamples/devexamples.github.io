@@ -65,72 +65,159 @@ points = [<span class="blue">0</span><span class="orange">,</span> <span class="
 figures = [<span class="green">Rock"</span><span class="orange">,</span> <span class="green">"Paper"</span><span class="orange">,</span> <span class="green">"Scissors"</span>]
 play = <span class="orange">True</span>
 
-<span class="orange">def</span> check(a<span class="orange">,</span> b):
-    <span class="orange">if</span> a == <span class="green">"Scissors"</span> <span class="orange">or</span> a == <span class="green">"scissors"</span>:
-        <span class="orange">if</span> b == <span class="green">"Scissors"</span> <span class="orange">or</span> b == <span class="green">"scissors"</span>:
-            result(<span class="green">"ab"</span>)
-        <span class="orange">elif</span> b == <span class="green">"Rock"</span> <span class="orange">or</span> b == <span class="green">"rock"</span>:
-            result(<span class="green">"b"</span>)
-        <span class="orange">elif</span> b == <span class="green">"Paper"</span> or b == <span class="green">"paper"</span>:
-            result(<span class="green">"a"</span>)
-    <span class="orange">elif</span> a == <span class="green">"Rock"</span> <span class="orange">or</span> a == <span class="green">"rock"</span>:
-        <span class="orange">if</span> b == <span class="green">"Scissors"</span> <span class="green">or</span> b == <span class="green">"scissors"</span>:
-            result(<span class="green">"a"</span>)
-        <span class="orange">elif</span> b == <span class="green">"Rock"</span> <span class="orange">or</span> b == <span class="green">"rock"</span>:
-            result(<span class="green">"ab"</span>)
-        <span class="orange">elif</span> b == <span class="green">"Paper"</span> <span class="orange">or</span> b == <span class="green">"paper"</span>:
-            result(<span class="green">"b"</span>)
-    <span class="orange">elif</span> a == <span class="green">"Paper"</span> <span class="orange">or</span> a == <span class="green">"paper"</span>:
-        <span class="orange">if</span> b == <span class="green">"Scissors"</span> <span class="orange">or</span> b == <span class="green">"scissors"</span>:
-            result(<span class="green">"b"</span>)
-        <span class="orange">elif</span> b == <span class="green">"Rock"</span> <span class="orange">or</span> b == <span class="green">"rock"</span>:
-            result(<span class="green">"a"</span>)
-        <span class="orange">elif</span> b == <span class="green">"Paper"</span> <span class="orange">or</span> b == <span class="orange">"paper"</span>:
-              result(<span class="green">"ab"</span>)
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">#!/usr/bin/python3</span>
+<span style="color: #408080; font-style: italic"># rock-paper-scissors.py</span>
 
-<span class="orange">def</span> result(winner):
-    <span class="orange">global</span> points
-    <span class="orange">if</span> winner == <span class="green">"a"</span>:
-        points[<span class="blue">0</span>] += <span class="blue">1</span>
-    <span class="orange">elif</span> winner == <span class="green">"ab"</span>:
-        points[<span class="blue">0</span>] += <span class="blue">1</span>
-        points[<span class="orange">1</span>] += <span class="blue">1</span>
-    <span class="orange">else</span>:
-        points[<span class="blue">1</span>] += <span class="blue">1</span>
-    <span class="purple">print</span>(<span class="green">"You: "</span> + <span class="purple">str</span>(points[<span class="blue">0</span>]) + <span class="green">" &amp; Computer: "</span> + <span class="purple">str</span>(points[<span class="blue">1</span>]) + <span class="green">"."</span>)
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">random</span> <span style="color: #008000; font-weight: bold">import</span> randint
 
-<span class="orange">def</span> finish():
-    <span class="orange">global</span> play
-    <span class="orange">if</span> points[<span class="blue">0</span>] > points[<span class="blue">1</span>]:
-        <span class="purple">print</span>(<span class="green">"Congratulations! You're the winner."</span>)
-    <span class="orange">elif</span> points[<span class="blue">0</span>] == points[<span class="blue">1</span>]:
-        <span class="purple">print</span>(<span class="green">"Tie! Both of you won."</span>)
-    <span class="orange">else</span>:
-        <span class="purple">print</span>(<span class="green">"Damage! Unfortunately the computer won."</span>)
-    <span class="purple">print</span>(<span class="green">"Again?"</span>)
-    decision = <span class="blue">0</span>
-    <span class="orange">while</span> decision <span class="orange">not in</span> [<span class="green">"Yes"</span><span class="orange">,</span> <span class="green">"No"</span><span class="orange">,</span> <span class="green">"yes"</span><span class="orange">,</span> <span class="green">"no"</span>]:
-        decision = <span class="purple">input</span>(<span class="green">"Yes / No: "</span>)
-    <span class="orange">if</span> decision == <span class="green">"Yes"</span> <span class="orange">or</span> decisionde == <span class="green">"yes"</span>:
-        play = <span class="orange">True</span>
-    <span class="orange">else</span>:
-        play = <span class="orange">False</span>
+points <span style="color: #666666">=</span> [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>]
+figures <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;Rock&quot;</span>, <span style="color: #BA2121">&quot;Paper&quot;</span>, <span style="color: #BA2121">&quot;Scissors&quot;</span>]
+play <span style="color: #666666">=</span> <span style="color: #008000">True</span>
 
-<span class="orange">while</span> play:
-    <span class="purple">print</span>(<span class="green">"* Rock-Paper-Scissors *"</span>)
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">check</span>(a, b):
+    a <span style="color: #666666">=</span> a<span style="color: #666666">.</span>lower() <span style="color: #408080; font-style: italic">#make variable `a&#39; lowercase</span>
+    b <span style="color: #666666">=</span> b<span style="color: #666666">.</span>lower() <span style="color: #408080; font-style: italic">#make variable `b&#39; lowercase</span>
+    <span style="color: #008000; font-weight: bold">if</span> a <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;scissors&quot;</span>: <span style="color: #408080; font-style: italic">#if variable `a&#39; is equal to &quot;scissors&quot;</span>
+        <span style="color: #008000; font-weight: bold">if</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;scissors&quot;</span>:
+            result(<span style="color: #BA2121">&quot;ab&quot;</span>) <span style="color: #408080; font-style: italic">#run function result with parameter &quot;ab&quot;</span>
+        <span style="color: #008000; font-weight: bold">elif</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;rock&quot;</span>:
+            result(<span style="color: #BA2121">&quot;b&quot;</span>)
+        <span style="color: #008000; font-weight: bold">elif</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;paper&quot;</span>:
+            result(<span style="color: #BA2121">&quot;a&quot;</span>)
+    <span style="color: #008000; font-weight: bold">elif</span> a <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;rock&quot;</span>:
+        <span style="color: #008000; font-weight: bold">if</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;scissors&quot;</span>:
+            result(<span style="color: #BA2121">&quot;a&quot;</span>)
+        <span style="color: #008000; font-weight: bold">elif</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;rock&quot;</span>:
+            result(<span style="color: #BA2121">&quot;ab&quot;</span>)
+        <span style="color: #008000; font-weight: bold">elif</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;paper&quot;</span>:
+            result(<span style="color: #BA2121">&quot;b&quot;</span>)
+    <span style="color: #008000; font-weight: bold">elif</span> a <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;paper&quot;</span>:
+        <span style="color: #008000; font-weight: bold">if</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;scissors&quot;</span>:
+            result(<span style="color: #BA2121">&quot;b&quot;</span>)
+        <span style="color: #008000; font-weight: bold">elif</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;rock&quot;</span>:
+            result(<span style="color: #BA2121">&quot;a&quot;</span>)
+        <span style="color: #008000; font-weight: bold">elif</span> b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;paper&quot;</span>:
+              result(<span style="color: #BA2121">&quot;ab&quot;</span>)
 
-    <span class="orange">for</span> runde <span class="orange">in</span> <span class="purple">range</span>(<span class="blue">3</span>):
-        <span class="purple">print</span>(<span class="green">"Runde "</span> + <span class="purple">str</span>(runde + <span class="blue">1</span>) + <span class="green">":"</span>)
-        player = <span class="blue">0</span>
-        <span class="orange">while</span> player <span class="orange">not in</span> [<span class="green">"Rock"</span><span class="orange">,</span> <span class="green">"Scissors"</span><span class="orange">,</span> <span class="green">"Paper"</span><span class="orange">,</span> <span class="green">"rock"</span><span class="orange">,</span> <span class="green">"scissors"</span><span class="orange">,</span>  <span class="green">"paper"</span>]:
-            player = <span class="purple">input</span>(<span class="green">"Your choice: "</span>)
-        computer = figures[randint(<span class="blue">0</span><span class="orange">,</span> <span class="blue">2</span>)]
-        <span class="purple">print</span>(<span class="green">"Computer: "</span> + computer)
-        check(player<span class="orange">,</span> computer)
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">result</span>(winner): <span style="color: #408080; font-style: italic">#define function</span>
+    <span style="color: #008000; font-weight: bold">global</span> points <span style="color: #408080; font-style: italic">#make variable `points&#39; able to be used outside of function result()</span>
+    <span style="color: #008000; font-weight: bold">if</span> winner <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;a&quot;</span>:
+        points[<span style="color: #666666">0</span>] <span style="color: #666666">+=</span> <span style="color: #666666">1</span> <span style="color: #408080; font-style: italic">#add 1 to first element of list `points&#39;</span>
+    <span style="color: #008000; font-weight: bold">elif</span> winner <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;ab&quot;</span>:
+        points[<span style="color: #666666">0</span>] <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+        points[<span style="color: #666666">1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        points[<span style="color: #666666">1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;You: &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(points[<span style="color: #666666">0</span>]) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; &amp; Computer: &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(points[<span style="color: #666666">1</span>]) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">finish</span>():
+    <span style="color: #008000; font-weight: bold">global</span> play
+    <span style="color: #008000; font-weight: bold">if</span> points[<span style="color: #666666">0</span>] <span style="color: #666666">&gt;</span> points[<span style="color: #666666">1</span>]:
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Congratulations! You&#39;re the winner.&quot;</span>)
+    <span style="color: #008000; font-weight: bold">elif</span> points[<span style="color: #666666">0</span>] <span style="color: #666666">==</span> points[<span style="color: #666666">1</span>]:
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Tie! Both of you won.&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Damage! Unfortunately the computer won.&quot;</span>)
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Again?&quot;</span>)
+    decision <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    <span style="color: #008000; font-weight: bold">while</span> decision <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&quot;Yes&quot;</span>, <span style="color: #BA2121">&quot;No&quot;</span>, <span style="color: #BA2121">&quot;yes&quot;</span>, <span style="color: #BA2121">&quot;no&quot;</span>]:
+        decision <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Yes / No: &quot;</span>)
+    <span style="color: #008000; font-weight: bold">if</span> decision<span style="color: #666666">.</span>lower() <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;yes&quot;</span>:
+        play <span style="color: #666666">=</span> <span style="color: #008000">True</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        play <span style="color: #666666">=</span> <span style="color: #008000">False</span>
+
+<span style="color: #008000; font-weight: bold">while</span> play:
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;* Rock-Paper-Scissors *&quot;</span>)
+
+    <span style="color: #008000; font-weight: bold">for</span> runde <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">3</span>):
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Round &quot;</span> <span style="color: #666666">+</span> <span style="color: #008000">str</span>(runde <span style="color: #666666">+</span> <span style="color: #666666">1</span>) <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;:&quot;</span>)
+        player <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+        <span style="color: #008000; font-weight: bold">while</span> player <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&quot;rock&quot;</span>, <span style="color: #BA2121">&quot;scissors&quot;</span>,  <span style="color: #BA2121">&quot;paper&quot;</span>]:
+            player <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Your choice: &quot;</span>)<span style="color: #666666">.</span>lower() <span style="color: #408080; font-style: italic">#ask for a choice and make it lowercase</span>
+        computer <span style="color: #666666">=</span> figures[randint(<span style="color: #666666">0</span>, <span style="color: #666666">2</span>)]
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Computer: &quot;</span> <span style="color: #666666">+</span> computer)
+        check(player, computer)
 
     finish()
-    punkte = [<span class="blue">0</span><span class="blue">,</span> <span class="blue">0</span>]
-  </pre></code>
+    punkte <span style="color: #666666">=</span> [<span style="color: #666666">0</span>, <span style="color: #666666">0</span>]
+</pre></td></tr></table></div><!--End of hilite.me's code highlighting-->
+
       </div>
     </main>
 
