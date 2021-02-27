@@ -2,7 +2,7 @@
 
 Copy-paste the existing website source. 
 
-Delete the code example. It'll be easier. Go to http://hilite.me and paste your code in with language Python and theme Default.
+Delete the code example. It'll be easier. Go to http://hilite.me and paste your code in with language Python and theme Default. Enable line numbers.
 
 Press Highlight and paste the html in where the code should be.
 
