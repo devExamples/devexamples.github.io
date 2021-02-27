@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>To-Do-List - OOP edition - devExamples</title>
+    <title>To-Do-List - OOP second edition - devExamples</title>
     <meta charset="utf-8">
 
     <link href="/static/css/style.css" rel="stylesheet" type="text/css">
@@ -27,42 +27,58 @@
 
     <main>
       <h4><a href="/python">Python</a></h4>
-      <h1>To-Do-List</h1>
-      <p>Create your own To-Do-List</p>
-      <p class="level">Beginner</p>
-      <p>You can choose between A (Create Task) and B (Check Task). With input you can add tasks. For checking a task you have to know it's number on the list. You must use object-oriented programming for this exercise.</p>
+      <h1>To-Do-List, OOP edition with task lists</h1>
+      <p>Create your own OOP todo-list</p>
+      <p class="level">Intermediate</p>
+      <p>You can choose between A (Create Task) and B (Check Task). With input you can add tasks. For checking a task you have to know it's number on the list. You must use object-oriented programming for this exercise. This exercise can have multiple task lists.</p>
       <div class="code-1">
         <code>
           Welcome to your To-Do-List<br>
+          Let's create a task list.<br>
+          Give your new task list a name!: Testing 123<br>
+          Please choose your task list of choice.<br>
+          1.  Testing 123<br>
+          0.  Create a new task list<br>
+          Your selection? <span class="green">1</span><br>
           Congratulations! You have nothing to do<br>
           What do you want to do?<br>
           (A) Create Task<br>
           (B) Check Task<br>
-          A or B: <span class="green">A</span><br>
-          Which task do you want to add?<br>
-          Task: <span class="green">Learn Python</span><br>
+          (C) Exit Task List<br>
+          A or B or C: <span class="green">A</span><br>
+          Please enter the name to be used: <span class="green">Learn Python</span><br>
           Your exercises:<br>
           -  Learn Python<br>
-          Create Task (A) or Check Task (B): <span class="green">A</span><br>
-          Which task do you want to add?<br>
-          Task: <span class="green">Read a good book</span><br>
+          What do you want to do?<br>
+          (A) Create Task<br>
+          (B) Check Task<br>
+          (C) Exit Task List<br>
+          A or B or C: <span class="green">A</span><br>
+          Please enter the name to be used: <span class="green">Read a good book</span><br>
           Your exercises:<br>
           -  Learn Python<br>
           -  Read a good book<br>
-          Create Task (A) or Check Task (B): <span class="green">B</span><br>
+          What do you want to do?<br>
+          (A) Create Task<br>
+          (B) Check Task<br>
+          (C) Exit Task List<br>
+          A or B or C: <span class="green">B</span><br>
           Which task do you want to select?<br>
           Number: <span class="green">2</span><br>
-          This one: Read a good book?<br>
+          This task will be removed. Is this OK? Read a good book<br>
           Y/N: <span class="green">y</span><br>
           Your exercises:<br>
           -  Learn Python<br>
-          Create Task (A) or Check Task (B):<br>
+          What do you want to do?<br>
+          (A) Create Task<br>
+          (B) Check Task<br>
+          (C) Exit Task List<br>
         </code>
       </div>
 
       <button class="view-solution">Solution</button><div class="code-2">
 
-      <!-- HTML generated using hilite.me --><div style="overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+      <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -118,64 +134,109 @@
 54
 55
 56
-57</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">start</span>():
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">origin</span>():
+    name <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Let&#39;s create a task list.</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Give your new task list a name!: &quot;</span>)
+    list1 <span style="color: #666666">=</span> TaskList(name)
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">start</span>():
     <span style="color: #008000; font-weight: bold">global</span> a_b
-    showTasks()
+    item <span style="color: #666666">=</span> showTasks()
     <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;What do you want to do?&quot;</span>)
     <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;(A) Create Task&quot;</span>)
-    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;(B) Check Task&quot;</span>)
-    a_b <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;A or B: &quot;</span>)
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;(B) Remove Task&quot;</span>)
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;(C) Exit Task List&quot;</span>)
+    a_b <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;A or B or C: &quot;</span>)
     <span style="color: #008000; font-weight: bold">if</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;a&quot;</span> <span style="color: #AA22FF; font-weight: bold">or</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;A&quot;</span>:
-        createTask()
+        name <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Please enter the name to be used: &quot;</span>)
+        item<span style="color: #666666">.</span>CreateTask(name)
     <span style="color: #008000; font-weight: bold">elif</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;b&quot;</span> <span style="color: #AA22FF; font-weight: bold">or</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;B&quot;</span>:
-        checkTask()
+        checkTask(item)
+    <span style="color: #008000; font-weight: bold">elif</span> a_b<span style="color: #666666">.</span>lower() <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;c&quot;</span>:
+        <span style="color: #008000; font-weight: bold">pass</span>
     <span style="color: #008000; font-weight: bold">else</span>:
-        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Choose A or B!&quot;</span>)
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Choose A or B or C!&quot;</span>)
 
 <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">showTasks</span>():
-    TODO <span style="color: #666666">=</span> Task<span style="color: #666666">.</span>TODO
+    pos <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    <span style="color: #008000; font-weight: bold">while</span> pos <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+        pos <span style="color: #666666">=</span> ShowLists()
+    TODO <span style="color: #666666">=</span> TaskList<span style="color: #666666">.</span>lists[pos]<span style="color: #666666">.</span>items
+    Choice <span style="color: #666666">=</span> TaskList<span style="color: #666666">.</span>lists[pos]
     <span style="color: #008000; font-weight: bold">if</span> TODO:
         <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Your exercises:&quot;</span>)
+        pos <span style="color: #666666">=</span> <span style="color: #666666">1</span>
         <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> TODO:
-            <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;- &quot;</span>, end<span style="color: #666666">=</span><span style="color: #BA2121">&quot; &quot;</span>)
-            <span style="color: #008000; font-weight: bold">print</span>(i)
+            <span style="color: #008000; font-weight: bold">print</span>(f<span style="color: #BA2121">&quot;{pos}.  {i}&quot;</span>)
+            pos <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
     <span style="color: #008000; font-weight: bold">else</span>:
             <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Congratulations! You have nothing to do&quot;</span>)
+    <span style="color: #008000; font-weight: bold">return</span> Choice
 
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">createTask</span>():
-    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Which task do you want to add?&quot;</span>)
-    task <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Task: &quot;</span>)
-    Task<span style="color: #666666">.</span>CreateTask(task)
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ShowLists</span>():
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Please choose your task list of choice.&quot;</span>)
+    pos <span style="color: #666666">=</span> <span style="color: #666666">1</span> <span style="color: #408080; font-style: italic">#keeping track of our position</span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> TaskList<span style="color: #666666">.</span>lists[<span style="color: #666666">1</span>:]: <span style="color: #408080; font-style: italic">#the 1: will only go from the position 1 and on, this is so users don&#39;t get confused heh</span>
+        <span style="color: #008000; font-weight: bold">print</span>(f<span style="color: #BA2121">&quot;{pos}. {i.name}&quot;</span>) <span style="color: #408080; font-style: italic">#requires python 3.6+, can be replaced with %s or multiple print statements.</span>
+        pos <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;0.  Create new task list&quot;</span>)
+    pos <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Your selection? &quot;</span>))
+    <span style="color: #008000; font-weight: bold">if</span> pos <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+        lname <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Enter your task name of choice!: &quot;</span>)
+        TaskList(lname)
+    <span style="color: #008000; font-weight: bold">return</span> pos
 
-<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Task</span>:
-    <span style="color: #AA22FF">@classmethod</span>
-    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">CreateTask</span>(cls, name):
-        cls<span style="color: #666666">.</span>TODO<span style="color: #666666">.</span>append(name)
-    TODO <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">TaskList</span>:
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">__init__</span>(<span style="color: #008000">self</span>, name):
+        cls <span style="color: #666666">=</span> <span style="color: #008000">type</span>(<span style="color: #008000">self</span>)
+        cls<span style="color: #666666">.</span>lists<span style="color: #666666">.</span>append(<span style="color: #008000">self</span>)
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>items <span style="color: #666666">=</span> []
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>name <span style="color: #666666">=</span> name
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">CreateTask</span>(<span style="color: #008000">self</span>, name):
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>items<span style="color: #666666">.</span>append(name)
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">DeleteTask</span>(<span style="color: #008000">self</span>, pos):
+        <span style="color: #008000; font-weight: bold">del</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>items[pos]
+    lists <span style="color: #666666">=</span> [<span style="color: #008000">None</span>]
 
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">checkTask</span>():
-    TODO <span style="color: #666666">=</span> Task<span style="color: #666666">.</span>TODO
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">checkTask</span>(item):
+    TODO <span style="color: #666666">=</span> item<span style="color: #666666">.</span>items
     <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Which task do you want to select?&quot;</span>)
     number <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Number: &quot;</span>))
     <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;This task will be removed. Is this OK?&quot;</span>, end<span style="color: #666666">=</span><span style="color: #BA2121">&quot; &quot;</span>)
-    <span style="color: #008000; font-weight: bold">print</span>(TODO[number <span style="color: #666666">-</span> <span style="color: #666666">1</span>], end<span style="color: #666666">=</span><span style="color: #BA2121">&quot; &quot;</span>)
+    <span style="color: #008000; font-weight: bold">print</span>("\n" + TODO[number <span style="color: #666666">-</span> <span style="color: #666666">1</span>], end<span style="color: #666666">=</span><span style="color: #BA2121">&quot; &quot;</span>)
     really <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Y/N: &quot;</span>)
     <span style="color: #008000; font-weight: bold">if</span> really <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;Y&quot;</span> <span style="color: #AA22FF; font-weight: bold">or</span> really <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;y&quot;</span>:
-        <span style="color: #008000; font-weight: bold">del</span> TODO[number <span style="color: #666666">-</span> <span style="color: #666666">1</span>]
+        item<span style="color: #666666">.</span>DeleteTask(number <span style="color: #666666">-</span> <span style="color: #666666">1</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Canceled.&quot;</span>)
 
 <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Welcome to your To-Do-List&quot;</span>)
-start()
+origin()
+dashboard <span style="color: #666666">=</span> start
 <span style="color: #008000; font-weight: bold">while</span> <span style="color: #008000">True</span>:
-    showTasks()
-    a_b <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Create Task (A) or Check Task (B): &quot;</span>)
-    <span style="color: #008000; font-weight: bold">if</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;a&quot;</span> <span style="color: #AA22FF; font-weight: bold">or</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;A&quot;</span>:
-        createTask()
-    <span style="color: #008000; font-weight: bold">elif</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;b&quot;</span> <span style="color: #AA22FF; font-weight: bold">or</span> a_b <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;B&quot;</span>:
-        checkTask()
-    <span style="color: #008000; font-weight: bold">else</span>:
-        <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;Choose A or B!&quot;</span>)
-        <span style="color: #008000; font-weight: bold">pass</span>
-</pre></td></tr></table></div></div>
+    dashboard()
+</pre></td></tr></table></div>
+</div>
       <!--end of highlighter-->
     </main>
 
